@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Gray / Neutral scale */
+  --color-gray-50: oklch(0.985 0.003 255);
+  --color-gray-100: oklch(0.967 0.005 255);
+  --color-gray-200: oklch(0.92 0.01 255);
+  --color-gray-300: oklch(0.87 0.015 255);
+  --color-gray-400: oklch(0.7 0.025 255);
+  --color-gray-500: oklch(0.55 0.03 255);
+  --color-gray-600: oklch(0.45 0.03 255);
+  --color-gray-700: oklch(0.37 0.03 255);
+  --color-gray-800: oklch(0.28 0.025 255);
+  --color-gray-900: oklch(0.21 0.02 255);
+  --color-gray-950: oklch(0.14 0.015 255);
+
+  /* Primary (Indigo) */
+  --color-primary-50: oklch(0.96 0.02 275);
+  --color-primary-100: oklch(0.93 0.04 275);
+  --color-primary-200: oklch(0.87 0.07 275);
+  --color-primary-300: oklch(0.78 0.12 275);
+  --color-primary-400: oklch(0.68 0.15 275);
+  --color-primary-500: oklch(0.58 0.18 275);
+  --color-primary-600: oklch(0.49 0.16 275);
+  --color-primary-700: oklch(0.41 0.14 275);
+  --color-primary-800: oklch(0.33 0.11 275);
+  --color-primary-900: oklch(0.27 0.09 275);
+  --color-primary-950: oklch(0.2 0.07 275);
+
+  /* Accent (Violet) */
+  --color-accent-50: oklch(0.97 0.02 300);
+  --color-accent-100: oklch(0.94 0.04 300);
+  --color-accent-200: oklch(0.88 0.08 300);
+  --color-accent-300: oklch(0.78 0.14 300);
+  --color-accent-400: oklch(0.68 0.18 300);
+  --color-accent-500: oklch(0.58 0.2 300);
+  --color-accent-600: oklch(0.49 0.18 300);
+  --color-accent-700: oklch(0.4 0.15 300);
+  --color-accent-800: oklch(0.33 0.12 300);
+  --color-accent-900: oklch(0.26 0.09 300);
+  --color-accent-950: oklch(0.2 0.07 300);
+
+  /* Semantic: Success / Warning / Danger */
+  --color-success-500: oklch(0.65 0.18 150);
+  --color-warning-500: oklch(0.75 0.15 80);
+  --color-danger-500: oklch(0.62 0.23 25);
+}
