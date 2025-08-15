@@ -17,7 +17,7 @@ export function useCreateTodo() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: (input: { title: string; status: Status }) =>
-      API.create(input.title),
+      API.create(input.title, input.status === "done"),
     onSuccess: () => qc.invalidateQueries({ queryKey: TODOS_KEY }),
   });
 }
@@ -25,10 +25,11 @@ export function useCreateTodo() {
 export function useUpdateTodo() {
   const qc = useQueryClient();
   return useMutation({
+    // ✅ pass { title, status } to match API.update signature
     mutationFn: (input: { id: number; title?: string; status?: Status }) =>
       API.update(input.id, {
-        todo: input.title,
-        completed: input.status ? input.status === "done" : undefined,
+        title: input.title,
+        status: input.status,
       }),
     onSuccess: () => qc.invalidateQueries({ queryKey: TODOS_KEY }),
   });

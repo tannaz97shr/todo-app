@@ -27,23 +27,18 @@ export const API = {
    */
   async update(
     id: number,
-    changes: { title?: string; status?: Status }
+    patch: { title?: string; status?: Status }
   ): Promise<RemoteTodo> {
-    const patch: Partial<RemoteTodo> = {};
-
-    if (changes.title !== undefined) {
-      patch.todo = changes.title;
-    }
-    if (changes.status !== undefined) {
-      patch.completed = changes.status === "done";
-    }
-
     const res = await fetch(`${BASE_URL}/${id}`, {
-      method: "PUT", // PUT works fine for full or partial update in DummyJSON
+      method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(patch),
+      body: JSON.stringify({
+        todo: patch.title, // convert to API expected
+        completed:
+          patch.status !== undefined ? patch.status === "done" : undefined,
+      }),
     });
-    if (!res.ok) throw new Error(`Failed to update todo ${id}`);
+    if (!res.ok) throw new Error("Failed to update todo");
     return res.json();
   },
 
